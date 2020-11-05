@@ -69,6 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dispatches.cs" />
     <Compile Include="Operator.xaml.cs">
       <DependentUpon>Operator.xaml</DependentUpon>
     </Compile>
