@@ -1,0 +1,27 @@
+﻿<Window x:Class="KwikMedical.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KwikMedical"
+        mc:Ignorable="d"
+        Title="Window1" Height="800.4" Width="1058">
+    <Grid>
+        <Button Content="Search for patient" HorizontalAlignment="Left" Height="64" Margin="87,302,0,0" VerticalAlignment="Top" Width="167" FontSize="18" Click="Button_Click"/>
+        <Label Content="Enter NHS Number" HorizontalAlignment="Left" Margin="87,108,0,0" VerticalAlignment="Top" Width="167" Height="36" FontSize="16"/>
+        <TextBox x:Name="nhsNoInput" HorizontalAlignment="Left" Height="36" Margin="87,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" FontSize="20"/>
+        <ListBox HorizontalAlignment="Left" Height="246" Margin="311,120,0,0" VerticalAlignment="Top" Width="185" Name="patientDetailView"/>
+        <Label Content="KwikMedical" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="78" Width="228" FontSize="35"/>
+        <Button x:Name="addPatientButton" Content="Add Patient" HorizontalAlignment="Left" Margin="137,691,0,0" VerticalAlignment="Top" Width="157" Height="68" FontSize="20" Click="Button_Click_1"/>
+        <Label Content="NHS ID" HorizontalAlignment="Left" Margin="87,457,0,0" VerticalAlignment="Top" Height="48" Width="114" FontSize="20"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="87,510,0,0" VerticalAlignment="Top" Height="48" Width="114" FontSize="20"/>
+        <Label Content="Address&#xD;&#xA;" HorizontalAlignment="Left" Margin="87,563,0,0" VerticalAlignment="Top" Height="46" Width="128" FontSize="20"/>
+        <Label Content="Condition&#xA;" HorizontalAlignment="Left" Margin="87,614,0,0" VerticalAlignment="Top" Height="46" Width="128" FontSize="20"/>
+        <TextBox x:Name="nhsNoInput_Copy" HorizontalAlignment="Left" Height="36" Margin="87,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="311,457,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="NHSIDCreator"/>
+        <TextBox HorizontalAlignment="Left" Height="48" Margin="311,510,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="patientNameBox"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="311,572,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="PatientAddressBox"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="311,623,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="Condition"/>
+
+    </Grid>
+</Window>
