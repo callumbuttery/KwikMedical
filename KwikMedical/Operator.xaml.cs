@@ -44,37 +44,12 @@ namespace KwikMedical
             hostpitalBox.Items.Add("Hospital 4");
         }
 
-        //method used to check if user exists with a certain NHS number
-        private async Task<UserRecords> GetRecords()
-        {
-            //store value
-            string nhsinput = NHSIDCreator.Text;
-   
-
-            //search for patient details
-            var getPatient = (await firebaseClient
-                .Child("UserRecords")
-                .OnceAsync<UserRecords>()).Where(a => a.Object.NHSid == nhsinput).FirstOrDefault(); 
-
-            if(getPatient == null)
-            {
-                //no patient found, display error
-                MessageBox.Show("Sorry, No users with this NHS ID found");
-                return null;
-            }
-            else
-            {
-                //return the found user as an object
-                var userToReturn = getPatient.Object as UserRecords;
-                return userToReturn;
-            }
-        }
+        
 
         //register user
         async void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //check if user with that nhsID exists 
-            var retrieveRecords = await GetRecords();
+
 
                 //gets NHS ID
                 string id = NHSIDCreator.Text;
@@ -88,6 +63,7 @@ namespace KwikMedical
             pushedDetails.Items.Clear();
             globalNHSID = id;
             globalAddress = PatientAddressBox.Text;
+            globalCondition = Condition.Text;
             pushedDetails.Items.Add("NHS ID: " + id);
             pushedDetails.Items.Add("Patient Name: " + patientNameBox.Text);
             pushedDetails.Items.Add("Patient Address: " + PatientAddressBox.Text);
@@ -106,7 +82,7 @@ namespace KwikMedical
                 if (!string.IsNullOrEmpty(ambulanceBox.Text) && !string.IsNullOrEmpty(hostpitalBox.Text))
                 {
                     //generate new caseNo to uniquely identify each emergency call
-                    Guid caseNo = new Guid();
+                    Guid caseNo = Guid.NewGuid();
                     //convert to string for server storage
                     string ConvertedCase = caseNo.ToString();
 
