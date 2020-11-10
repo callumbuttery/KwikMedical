@@ -89,7 +89,7 @@ namespace KwikMedical
                     //post new emergency to server
                     var postAmbulance = await firebaseClient
                         .Child("Dispatches")
-                        .PostAsync(new Dispatches() { nhsID = globalNHSID, caseNumber = ConvertedCase, patientAddress = globalAddress, ambulance = ambulanceBox.Text, hosptial = hostpitalBox.Text, condition = globalCondition, active = true });
+                        .PostAsync(new Dispatches() { nhsID = globalNHSID, caseNumber = ConvertedCase, patientAddress = globalAddress, ambulance = ambulanceBox.Text, hosptial = hostpitalBox.Text, condition = globalCondition, active = true, onWayToHospital = false });
                     MessageBox.Show("Dispatched");
                 }
                 else

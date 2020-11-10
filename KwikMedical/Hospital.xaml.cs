@@ -77,6 +77,8 @@ namespace KwikMedical
                         onWayToHospital = item.Object.onWayToHospital
                     }).ToList();
 
+                //clear list box
+                casesBox.Items.Clear();
                 //display job details to screen
                 foreach(var item in listOfCases)
                 {
@@ -134,6 +136,8 @@ namespace KwikMedical
                 //order list
                 var orderedHistory = history.OrderByDescending(x => x.dateTime).ToList();
 
+                //clear list box
+                historyBox.Items.Clear();
 
                 //display each item
                 foreach(var item in orderedHistory)
