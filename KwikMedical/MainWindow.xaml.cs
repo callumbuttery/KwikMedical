@@ -31,5 +31,13 @@ namespace KwikMedical
             Window1 win1 = new Window1();
             win1.Show();
         }
+
+        private void hospitalButton_Click(object sender, RoutedEventArgs e)
+        {
+            Hospital win2 = new Hospital();
+            win2.Show();
+        }
+
+    
     }
 }

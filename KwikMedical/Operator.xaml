@@ -17,11 +17,13 @@
         <TextBox HorizontalAlignment="Left" Height="48" Margin="156,165,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="patientNameBox"/>
         <TextBox HorizontalAlignment="Left" Height="37" Margin="444,115,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="PatientAddressBox"/>
         <TextBox HorizontalAlignment="Left" Height="37" Margin="444,176,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="168" Name="Condition"/>
-        <Label Content="Dispatch" HorizontalAlignment="Left" Height="44" Margin="948,69,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
-        <ComboBox HorizontalAlignment="Left" Margin="788,165,0,0" VerticalAlignment="Top" Width="152" Height="36" Name="ambulanceBox"/>
-        <ComboBox HorizontalAlignment="Left" Height="34" Margin="1039,167,0,0" VerticalAlignment="Top" Width="175" Name="hostpitalBox"/>
-        <Button Content="Dispatch" HorizontalAlignment="Left" Margin="948,232,0,0" VerticalAlignment="Top" Width="87" Height="51" Name="dispatch" FontSize="20" Click="dispatch_Click"/>
+        <Label Content="Dispatch ambulance&#xD;&#xA;to hospital" HorizontalAlignment="Left" Height="61" Margin="904,69,0,0" VerticalAlignment="Top" Width="195" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Margin="904,176,0,0" VerticalAlignment="Top" Width="175" Height="36" Name="ambulanceBox"/>
+        <ComboBox HorizontalAlignment="Left" Height="34" Margin="904,232,0,0" VerticalAlignment="Top" Width="175" Name="hostpitalBox"/>
+        <Button Content="Dispatch" HorizontalAlignment="Left" Margin="948,286,0,0" VerticalAlignment="Top" Width="87" Height="51" Name="dispatch" FontSize="20" Click="dispatch_Click"/>
         <ListBox HorizontalAlignment="Left" Height="126" Margin="156,320,0,0" VerticalAlignment="Top" Width="433" Name="pushedDetails"/>
+        <Label Content="Ambulance" HorizontalAlignment="Left" Margin="804,176,0,0" VerticalAlignment="Top" Width="95" FontSize="15"/>
+        <Label Content="Hospital" HorizontalAlignment="Left" Margin="804,240,0,0" VerticalAlignment="Top" Width="80" FontSize="15"/>
 
     </Grid>
 </Window>

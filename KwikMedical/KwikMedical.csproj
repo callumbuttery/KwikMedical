@@ -70,10 +70,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Dispatches.cs" />
+    <Compile Include="Hospital.xaml.cs">
+      <DependentUpon>Hospital.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Operator.xaml.cs">
       <DependentUpon>Operator.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserRecords.cs" />
+    <Page Include="Hospital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

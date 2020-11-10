@@ -1,0 +1,18 @@
+﻿<Window x:Class="KwikMedical.Hospital"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KwikMedical"
+        mc:Ignorable="d"
+        Title="Hospital" Height="450" Width="1216.31">
+    <Grid>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="310,360,0,0" VerticalAlignment="Top" Width="92" Height="49" FontSize="20" Click="refreshClicked" RenderTransformOrigin="0.476,0.499"/>
+        <Label Content="Select Hospital" HorizontalAlignment="Left" Margin="68,55,0,0" VerticalAlignment="Top" Height="34" Width="194" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="154" Height="39" Name="hospitalBox"/>
+        <ListBox HorizontalAlignment="Left" Height="354" Margin="407,55,0,0" VerticalAlignment="Top" Width="312" Name="casesBox"/>
+        <Label Content="Active Cases" HorizontalAlignment="Left" Margin="489,10,0,0" VerticalAlignment="Top" Height="34" Width="173" FontSize="20"/>
+        <Button Content="Select" HorizontalAlignment="Left" Height="47" Margin="100,183,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
+
+    </Grid>
+</Window>
