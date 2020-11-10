@@ -28,6 +28,9 @@ namespace KwikMedical
         //create list to store jobs
         List<Dispatches> listOfCases = new List<Dispatches>();
 
+        //create patient history list
+        List<UserRecords> history = new List<UserRecords>();
+
         //hospital number entered by user from combobox
         string hospitalNumber = "";
 
@@ -46,7 +49,7 @@ namespace KwikMedical
         //refresh cases on screen
         private void refreshClicked(object sender, RoutedEventArgs e)
         {
-            casesBox.Items.Clear();
+            
             getCases();
         }
 
@@ -87,7 +90,8 @@ namespace KwikMedical
                     casesBox.Items.Add("time of finish: " + item.timeOfFinish);
                     casesBox.Items.Add("On way to hospital: " + item.onWayToHospital);
                     casesBox.Items.Add("\n\n\n\n");
-                }    
+                }   
+            
                 
             }
         }
@@ -95,12 +99,54 @@ namespace KwikMedical
         //user selects hospital
         public void Button_Click(object sender, RoutedEventArgs e)
         {
+            casesBox.Items.Clear();
             if (!string.IsNullOrEmpty(hospitalBox.SelectedItem.ToString()))
             {
                 hospitalNumber = hospitalBox.SelectedItem.ToString();
                 getCases();
             }
 
+        }
+
+        //used to search for patient records
+        async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(IDEntry.Text))
+            {
+                //get id thats been entered
+                string id = IDEntry.Text;
+
+                //get history
+                history = (await firebaseClient
+                    .Child("UserRecords")
+                    .OnceAsync<UserRecords>()).Where(a => a.Object.NHSid == id).Select(item => new UserRecords
+                    {
+                        NHSid = item.Object.NHSid,
+                        name = item.Object.name,
+                        medicalCondition = item.Object.medicalCondition,
+                        dateTime = item.Object.dateTime,
+                        address = item.Object.address
+
+
+
+                    }).ToList();
+
+                //order list
+                var orderedHistory = history.OrderByDescending(x => x.dateTime).ToList();
+
+
+                //display each item
+                foreach(var item in orderedHistory)
+                {
+                    historyBox.Items.Add("NHS ID: " + item.NHSid);
+                    historyBox.Items.Add("Name: " + item.name);
+                    historyBox.Items.Add("Medical Condition: " + item.medicalCondition);
+                    historyBox.Items.Add("Date of event: " + item.dateTime);
+                    historyBox.Items.Add("Address: " + item.address);
+                    historyBox.Items.Add("\n");
+                }
+
+            }
         }
     }
 }

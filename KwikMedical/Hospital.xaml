@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KwikMedical"
         mc:Ignorable="d"
-        Title="Hospital" Height="450" Width="1216.31">
-    <Grid>
+        Title="Hospital" Height="450" Width="1129.679">
+    <Grid Margin="0,0,2,0">
         <Button Content="Refresh" HorizontalAlignment="Left" Margin="310,360,0,0" VerticalAlignment="Top" Width="92" Height="49" FontSize="20" Click="refreshClicked" RenderTransformOrigin="0.476,0.499"/>
         <Label Content="Select Hospital" HorizontalAlignment="Left" Margin="68,55,0,0" VerticalAlignment="Top" Height="34" Width="194" FontSize="20"/>
         <ComboBox HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="154" Height="39" Name="hospitalBox"/>
         <ListBox HorizontalAlignment="Left" Height="354" Margin="407,55,0,0" VerticalAlignment="Top" Width="312" Name="casesBox"/>
         <Label Content="Active Cases" HorizontalAlignment="Left" Margin="489,10,0,0" VerticalAlignment="Top" Height="34" Width="173" FontSize="20"/>
         <Button Content="Select" HorizontalAlignment="Left" Height="47" Margin="100,183,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
+        <Label Content="Search patient records" HorizontalAlignment="Left" Height="34" Margin="846,10,0,0" VerticalAlignment="Top" Width="214" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="846,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Name="IDEntry"/>
+        <Label Content="NHS ID" HorizontalAlignment="Left" Margin="766,52,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Search" HorizontalAlignment="Left" Height="35" Margin="891,95,0,0" VerticalAlignment="Top" Width="130" FontSize="20" Click="Button_Click_1"/>
+        <ListBox HorizontalAlignment="Left" Height="252" Margin="841,157,0,0" VerticalAlignment="Top" Width="219" Name="historyBox"/>
 
     </Grid>
 </Window>

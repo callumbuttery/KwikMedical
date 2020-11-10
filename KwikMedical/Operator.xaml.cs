@@ -50,14 +50,14 @@ namespace KwikMedical
         async void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-
+            string time = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
                 //gets NHS ID
                 string id = NHSIDCreator.Text;
 
                 //post new emergency to database
                 var postUser = await firebaseClient
                     .Child("UserRecords")
-                    .PostAsync(new UserRecords() { NHSid = id, name = patientNameBox.Text, address = PatientAddressBox.Text, medicalCondition = Condition.Text });
+                    .PostAsync(new UserRecords() { NHSid = id, name = patientNameBox.Text, address = PatientAddressBox.Text, medicalCondition = Condition.Text, dateTime = time });
 
             //display to screen
             pushedDetails.Items.Clear();

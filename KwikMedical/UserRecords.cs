@@ -12,5 +12,6 @@ namespace KwikMedical
         public string name { get; set; }
         public string address { get; set; }
         public string medicalCondition { get; set; }
+        public string dateTime { get; set; }
     }
 }
